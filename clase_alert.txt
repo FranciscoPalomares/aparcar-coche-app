@@ -1,83 +1,3 @@
-page-home {
-    #inicio{
-        height: 100%;
-  display: block;
-  vertical-align: middle;
-    }
-    h2{
-        color:white;
-       
-    }
-
-    h4{
-        color:white;
-
-        
-    }
-
-    .toolbar-title-md{
-        color:white;
-    }
-    ion-content{
-        background-image: linear-gradient(to bottom right, #36D1DC, #5B86E5);
-    }
-
-    button{
-        color:white;
-    }
-
-    p{
-        color:white;
-    }
-
-    .spinnerCenter {
-        display: flex;
-        
-        justify-content: center; 
-        align-items: center; 
-        height: 90%;
-        margin: 0 auto;
-        
-        width: 90%;
-    }
-
-    ion-spinner {
-        * {
-          stroke: white !important;
-        }
-    
-        &.spinner-circles circle,
-        &.spinner-bubbles circle,
-        &.spinner-dots circle {
-          fill: white !important;
-        }
-      }
-
-      ion-slides{
-     
-        height: 40% !important;
-        width: auto !important;
-        
-        
-      }
-  
-        ion-slide.swiper-slide{
-          left:25%;
-        }
-      .thumb{
-        padding:2%;
-      }
-
-      .gallery-modal {
-        background: rgba(0, 0, 0, 0.5) !important;
-    }
-
-      
-
-      
-}
-
-
 //La clase del alert tiene que ir fuera del scss de la página
 //Para utilizar esta clase en el alert => cssClass: 'toastclase'
 .toastclase {
@@ -111,15 +31,14 @@ page-home {
 
     //Mensaje, debajo del título
     .alert-message {
-        font-size:120% !important;
         color: white; 
-        //margin-top:5% !important;
+        margin-top:5% !important;
     }
 
     //Tratar toda la caja del alert
     .alert-wrapper {
         border: 2px solid white;
-        //margin-top:5% !important;
+        margin-top:5% !important;
         text-align: center;
        border-radius: 50px !important;
        // border-top-right-radius: 30px!important;

@@ -1,0 +1,22 @@
+<ion-header no-border text-center>
+
+  <ion-navbar transparent>
+    <ion-title>Crear nota</ion-title>
+
+    <ion-buttons end>
+      <button ion-button color="light" (click)="cerrarModal()">
+        Cerrar
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-textarea id="textarea" color="light" (input)="adjustTextarea($event);" [(ngModel)]="nota " placeholder="Escribe una nota "></ion-textarea>
+
+</ion-content>

@@ -1,0 +1,19 @@
+page-nota {
+    ion-content{
+        background-image: linear-gradient(to bottom right, #36D1DC, #5B86E5);
+        color:white;
+    }
+
+    .toolbar-title-md{
+        color:white;
+    }
+
+    ion-textarea{
+        color:white;
+    }
+
+    #textarea::placeholder{
+        color:red
+     }
+
+    }

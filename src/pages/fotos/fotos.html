@@ -1,0 +1,16 @@
+<ion-content padding>
+  <ion-slides class="image-slider" *ngIf="photos.length > 0" [slidesPerView]="2">
+    <ion-slide *ngFor="let photo of photos; let id = index">
+      <div class="thumb">
+        <ion-fab center bottom>
+
+          <button ion-fab color="danger" ion-fab (click)="deletePhoto(id)">
+            <ion-icon name="trash" class="deleteIcon"></ion-icon>
+          </button>
+        </ion-fab>
+
+        <img [src]="photo" *ngIf="photo" class="thumb-img" imageViewer/>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

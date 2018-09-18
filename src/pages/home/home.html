@@ -1,14 +1,99 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+<ion-header no-border text-center>
+  <ion-navbar transparent>
+    <ion-title [@slideInLeft]="slideInLeft">
+      {{title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content no-padding text-center class="vertical-align-content">
+  <div [@slideInDown]="slideInDown" center id="inicio" *ngIf="!ver_mapa && !mostrar_spinner" center text-center>
+
+    <h2 padding>¿Quieres saber dónde has aparcado tu coche? </h2>
+    <h4 padding>Primero necesitamos saber tu ubicación</h4>
+    <button ion-button outline round color="light" (click)="localizar()">Guardar ubicación</button>
+    <p>NOTA: activa el GPS</p>
+  </div>
+
+  <ion-spinner class="spinnerCenter" *ngIf="mostrar_spinner" name="crescent"></ion-spinner>
+
+  <div [@slideInDown]="slideInDown" *ngIf="ver_mapa && !mostrar_spinner" no-padding>
+    <iframe width="100%" height="170" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" [src]='this.url' (load)=" terminarSpinner()">
+    </iframe>
+    <br />
+    <ion-grid>
+      <ion-row text-center>
+        <ion-col>
+          <button ion-button outline color="light" (click)="linkmapa()">
+            <ion-icon name="logo-google"></ion-icon>&nbsp;Maps
+          </button>
+        </ion-col>
+
+        <ion-col>
+          <button ion-button outline color="light" (click)="crearNota()">
+            Crear Nota
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-label text-center style="color:white">
+      ¿Quieres poner fotos?
+    </ion-label>
+    <ion-grid>
+      <ion-row text-center>
+        <ion-col>
+          <button ion-button outline color="light" (click)="takePhoto()">
+            <ion-icon name="camera"></ion-icon>&nbsp;Cámara
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button outline color="light" (click)="deGaleria()">
+            <ion-icon name="image"></ion-icon>
+            &nbsp;Galería
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button ion-button round color="light" (click)="modalFotos()" *ngIf="photos.length > 0">
+      <ion-icon name="images"></ion-icon>
+      &nbsp;Ver fotos
+    </button>
+
+
+
+
+    <div center text-center>
+      <button ion-button round color="light" (click)="llegarUbicacion()">
+        Encontré mi coche&nbsp;
+        <ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </div>
+
+
+    <ion-fab bottom right>
+      <button ion-fab color="danger">
+        <ion-icon name="share"></ion-icon>
+      </button>
+      <ion-fab-list side="left">
+        <button ion-fab (click)="enviaWhatsapp()">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </button>
+        <button ion-fab (click)="enviaMail()">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+
+      </ion-fab-list>
+
+    </ion-fab>
+
+  </div>
+
+
+
+
+  <button ion-button outline color="light" (click)="alerta()"> Alerta</button>
+
+
 </ion-content>
